@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container" style="color: black;">
+        <h1>Happy Birthday, Jil!</h1>
+        <p>Wishing you all the best on your special day! Stay pretty and healthy. 
+           I don't havegift for you, but I hope you appreciate this small website I created just for you. 
+           Once again, Happy Birthday, Jil!</p>
+    </div>
+    <script>
+        function createConfetti() {
+            for (let i = 0; i < 50; i++) {
+                let confetti = document.createElement("div");
+                confetti.className = "confetti";
+                confetti.style.left = Math.random() * 100 + "vw";
+                confetti.style.animationDuration = (Math.random() * 3 + 2) + "s";
+                confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 70%)`;
+                document.body.appendChild(confetti);
+                setTimeout(() => confetti.remove(), 5000);
+            }
+        }
+        createConfetti();
+        setInterval(createConfetti, 2000);
+    </script>
+</body>
+</html>
